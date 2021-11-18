@@ -28,15 +28,15 @@ const App = () => {
   const [search, setSearch] = useState<string>("");
 
   const getTopAnime = async () => {
-    const temp = await fetch("https://api.jikan.moe/v3/top/anime/1/bypopularity").then((res) => res.json());
+    const temp = await fetch("https://api.jikan.moe/v3/top/manga/1/bypopularity").then((res) => res.json());
     setTopAnime(temp.top.slice(0, 5));
   };
 
-  const fetchAnime = async (query = "sword") => {
+  const fetchAnime = async (query = "demon") => {
     // title, sort and limit can be parameters
 
     const temp = await fetch(
-      `https://api.jikan.moe/v3/search/anime?q=${query}&order_by=title&sort=asc&limit=12`,
+      `https://api.jikan.moe/v3/search/manga?q=${query}&order_by=title&sort=asc&limit=12`,
     ).then((res) => res.json());
 
     setAnimeList(temp.results);
@@ -55,9 +55,9 @@ const App = () => {
 
   return (
     <div className='App'>
-      <Header title={"Anime"} />
+      <Header title={"Manga"} />
       <div className='content-wrap'>
-        <Sidebar topAnime={topAnime} title='Anime' />
+        <Sidebar topAnime={topAnime} title={"Manga"} />
         <MainContent setSearch={setSearch} search={search} handleSearch={handleSearch} animeList={animeList} />
       </div>
     </div>
