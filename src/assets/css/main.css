@@ -182,4 +182,14 @@ header h1 strong {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
 }
+
+.wrong {
+  background-color: red;
+  color: white;
+}
+
+.correct {
+  background-color: green;
+  color: white;
+}
 /*# sourceMappingURL=main.css.map */
