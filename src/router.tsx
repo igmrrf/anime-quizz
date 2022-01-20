@@ -1,23 +1,20 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import App from "./App";
-import Manga from "./Manga";
+import Navigation from "./components/Navigation";
+import Home from "./views/home/Home";
+import News from "./views/news/News";
+import Quizz from "./views/quizz/Quizz";
 
 const router = () => {
   return (
     <Router>
+      <Navigation />
       {/* A <Routes> looks through its children <Route>s and
           renders the first one that matches the current URL. */}
       <Routes>
-        <Route path='/' element={<App />} />
-        <Route path='/' element={<App />} />
-        <Route path='/' element={<App />} />
-        <Route path='/' element={<App />} />
-        <Route path='/' element={<App />} />
-        <Route path='/' element={<App />} />
-        <Route path='/' element={<App />} />
-        <Route path='/' element={<App />} />
-        <Route path='/manga' element={<Manga />} />
+        <Route path='/' element={<Home />} />
+        <Route path='/news' element={<News />} />
+        <Route path='/quizz' element={<Quizz />} />
       </Routes>
     </Router>
   );
